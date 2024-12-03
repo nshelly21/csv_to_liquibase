@@ -1,0 +1,46 @@
+id;code;system;subject;<BC>;content;<NR>
+6;TASK_ASSIGN_ON_APPROVING;false;Вы назначены утверждающим по заявке ${requestNumber} - ${serviceName};<BC>;"<#include ""service-desk/asup/header_asup.ftl"">
+
+                <html>
+                <head>
+                </head>
+                <body>
+                <p><b>Уважаемый/ая коллега!</b></p>
+
+                <p>Уведомляем Вас, что на Сервисном портале Вам направлено на согласование обращение ${requestNumber}</p>
+
+                <p><#if assigneeInfo??>Согласующий: ${assigneeInfo}</#if></p>
+
+                <p>Сервис: ${serviceName}</p>
+
+                <p>Получатель сервиса: ${recipientFIO}, ${recipientDepartment}, ${recipientPosition}</p>
+
+                <p>Дата регистрации: ${createdDate}</p>
+
+                <p>Срок согласования: ${expirationDate}</p>
+
+                <p>Пожалуйста, согласуйте или отклоните обращение.</p>
+
+                <br>
+
+                <p>Для просмотра обращения перейдите по <a href=""${link}"">ссылке</a></p>
+                <br>
+
+                <#if unsubscribeLink??><br/><a href=""${unsubscribeLink}"">Отписаться</a></#if>
+
+                </body>
+                </html>
+
+                <#include ""service-desk/asup/footer_asup.ftl"">";<NR>
+92;PDP_MENTOR_APPROVED_REPORT_TR;false;Наставник согласовал отчёт по ИПР обучаемому.;<BC>;"<html>
+<head>
+</head>
+<body>
+<p>Уважаемый/ая ${traineeFIO},</p>
+<p>Наставник согласовал отчет об исполнении Вами индивидуального плана развития.
+   Для просмотра отчета пройдите по ссылке <a href=""${planUrl}"">${planUrl}</a>.</p>
+<p><small>Это уведомление было создано автоматически.</small></p>
+</body>
+</html>
+";<NR>
+
